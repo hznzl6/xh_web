@@ -1,0 +1,396 @@
+<template>
+    <div class="Manager-MassArticle">
+        <div class="Manager-MassArticle_PC">
+            <div class="Manager-MassArticle_TableArticleData">
+                <el-button  @click="OpenAddArticleDialog" size="mini" style="display:block;float: right;margin: 6px 6px;">新增</el-button>
+                <el-table
+                stripe>
+                    <el-table-column
+                    label="id"></el-table-column>
+                    <el-table-column
+                    label="标题"></el-table-column>
+                    <el-table-column
+                    label="发布者"></el-table-column>
+                    <el-table-column
+                    label="浏览量"></el-table-column>
+                    <el-table-column
+                    label="发布时间"></el-table-column>
+                    <el-table-column
+                    label="更新时间"></el-table-column>
+                    <el-table-column
+                    label="状态"></el-table-column>
+                    <el-table-column
+                    label="操作"></el-table-column>
+                </el-table>
+                <el-pagination
+                layout="prev, pager, next"
+                :total="50"
+                style="text-align: left;">
+                </el-pagination>
+            </div>
+
+            <div class="Manager-MassArticle_TableArticlePost">
+                <div>
+                    <div style="display: flex;justify-content: flex-end;">
+                        <el-button>发布</el-button>
+                    </div>
+                    <el-input placeholder="输入文章标题" v-model="ArticleForm.title"></el-input>
+                    
+                    <editor
+                    id="Tiny-editor"
+                    api-key="ublhvveejzddur1ry6jxrqizz5urb3ri8w38goz9kskcr0mp"
+                    :init="{
+                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                        // toolbar: 'undo redo | blocks | ' +
+                        // 'bold italic backcolor | alignleft aligncenter ' +
+                        // 'alignright alignjustify | bullist numlist outdent indent | ' +
+                        // 'removeformat',
+                        plugins: [
+                            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                            'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                        ],
+                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:18px }'
+                        // language: 'zh-CN',
+                        // language_url: '/tinymce/langs/zh-Hans.js',
+                        }"
+                        initial-value="Welcome to TinyMCE!"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div class="Manager-MassArticle_Move">
+            <div class="Manager-MassArticle_TableArticlePost">
+                <div>
+                    <div style="display: flex;justify-content: flex-end;">
+                        <el-button>发布</el-button>
+                    </div>
+                    <el-input placeholder="输入文章标题" v-model="ArticleForm.title"></el-input>
+                    
+                    <editor
+                    id="Tiny-editor"
+                    api-key="ublhvveejzddur1ry6jxrqizz5urb3ri8w38goz9kskcr0mp"
+                    :init="{
+                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                        // toolbar: 'undo redo | blocks | ' +
+                        // 'bold italic backcolor | alignleft aligncenter ' +
+                        // 'alignright alignjustify | bullist numlist outdent indent | ' +
+                        // 'removeformat',
+                        plugins: [
+                            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                            'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                        ],
+                        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:18px }'
+                        // language: 'zh-CN',
+                        // language_url: '/tinymce/langs/zh-Hans.js',
+                    }"
+                    initial-value="Welcome to TinyMCE!"
+                />
+                </div>
+            </div>
+
+            <div class="Manager-MassArticle_TableArticleData">
+                <el-button  @click="OpenAddArticleDialog" size="mini" style="display:block;float: right;margin: 6px 6px;">新增</el-button>
+                <el-table
+                stripe>
+                    <el-table-column
+                    label="id"></el-table-column>
+                    <el-table-column
+                    label="标题"></el-table-column>
+                    <el-table-column
+                    label="发布者"></el-table-column>
+                    <el-table-column
+                    label="浏览量"></el-table-column>
+                    <el-table-column
+                    label="发布时间"></el-table-column>
+                    <el-table-column
+                    label="更新时间"></el-table-column>
+                    <el-table-column
+                    label="状态"></el-table-column>
+                    <el-table-column
+                    label="操作"></el-table-column>
+                </el-table>
+                <el-pagination
+                layout="prev, pager, next"
+                :total="50"
+                style="text-align: left;">
+                </el-pagination>
+            </div>
+        </div>
+
+        <el-dialog title="发布文章" :visible.sync="dialogFormPost">
+            <el-form :model="ArticleForm">
+                <!-- <el-form-item label="文章标题">
+                    
+                </el-form-item> -->
+                <el-input v-model="ArticleForm.title"></el-input>
+                <editor
+                    id="Tiny-editor"
+                    api-key="ublhvveejzddur1ry6jxrqizz5urb3ri8w38goz9kskcr0mp"
+                    :init="{
+                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                        // toolbar: 'undo redo | blocks | ' +
+                        // 'bold italic backcolor | alignleft aligncenter ' +
+                        // 'alignright alignjustify | bullist numlist outdent indent | ' +
+                        // 'removeformat',
+                        plugins: [
+                            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                            'insertdatetime', 'media', 'table', 'help', 'wordcount'
+                        ],
+                        // language: 'zh-CN',
+                        // language_url: '/tinymce/langs/zh-Hans.js',
+                    }"
+                    initial-value="Welcome to TinyMCE!"
+                />
+                <!-- <Editor
+                id="Tiny-editor"
+                api-key="ublhvveejzddur1ry6jxrqizz5urb3ri8w38goz9kskcr0mp"
+                :init="{
+                    selector: 'textarea',
+                    plugins: 'lists link image table code help wordcount',
+                    menubar: 'file edit view',
+                    // toolbar_mode: 'sliding',
+                    // plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+                    // toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    // tinycomments_mode: 'embedded',
+                    // tinycomments_author: 'Ganxy',
+                }"
+                initial-value="Welcome to TinyMCE!"
+                /> -->
+                <!-- <el-form-item label="文章内容"> -->
+                    <!-- <Toolbar class="MassArticle_toolBar"
+                        :editor="editor"
+                        :defaultConfig="toolbarConfig"
+                        :mode="mode"
+                    /> -->
+                    <!-- <Editor
+                        style="height: 500px; overflow-y: hidden;"
+                        v-model="ArticleForm.content"
+                        :defaultConfig="editorConfig"
+                        :mode="mode"
+                        @onCreated="onCreated"
+                    /> -->
+                    <!-- <el-input type="textarea" v-model="ArticleForm.content">
+                        
+                    </el-input> -->
+                    <!-- <editor v-model="content" :init="{ height: 500 }"></editor> -->
+
+                    
+
+                <!-- </el-form-item> -->
+                <div style="display: flex;justify-content: flex-end;">
+                    <el-button>发布</el-button>
+                </div>
+            </el-form>
+        </el-dialog>
+    </div>
+</template>
+<script>
+import Editor from '@tinymce/tinymce-vue'
+
+export default {
+    name: 'Tiny-editor',
+    components: {
+        'editor': Editor
+    },
+    data() {
+        return {
+            ArticleForm: {
+                title: '',
+                content: ''
+            },
+            dialogFormPost: false,
+            content: ''
+        }
+    },
+    methods: {
+        OpenAddArticleDialog() {
+            this.dialogFormPost = true
+        },
+    }
+}
+
+</script>
+<!-- <script>
+import Vue from 'vue'
+import Editor from '@wangeditor/editor-for-vue'
+export default Vue.extend ({
+    // components: {
+    //     Editor,
+    //     Toolbar
+    // },
+    components: {
+        Editor,
+    },
+    data() {
+        return {
+            ArticleForm: {
+                title: '',
+                content: ''
+            },
+            dialogFormPost: false,
+            editor: null,
+            // toolbarConfig: { 
+            
+            // },
+            editorConfig: { placeholder: '请输入内容...' },
+            mode: 'default',
+        }
+    },
+    created() {
+        
+    },
+    methods: {
+        OpenAddArticleDialog() {
+            this.dialogFormPost = true
+        },
+        onCreated(editor) {
+            this.editor = Object.seal(editor)
+        },
+        // getToolbar() {
+        //     const editor = this.editor
+        //     console.log(editor.getAllMenuKeys())
+        // }
+    },
+    beforeDestroy() {
+        const editor = this.editor
+        if (editor == null) return
+        editor.destroy()
+    }
+})
+</script> -->
+<style src="@wangeditor/editor/dist/css/style.css"></style>
+<style>
+.Manager-MassArticle {
+    display: flex;
+    margin: 12px 12px;
+    height: calc(100vh - 144px);
+    background-color: rgb(255, 255, 255, 0.6);
+}
+.Manager-MassArticle_TableArticleData .Manager-MassArticle_PC {
+    justify-content: flex-start;
+    height: calc(100vh - 144px);
+    width: 50%;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255, 0.6);
+}
+.el-textarea .el-textarea__inner {
+    max-height: 320px;
+}
+.el-textarea textarea {
+    min-height: 220px;
+}
+
+.MassArticle_toolBar .w-e-bar {
+    width: 100%;
+}
+
+.Manager-MassArticle_PC .Manager-MassArticle_TableArticlePost {
+    justify-content: flex-end;
+    height: calc(100vh - 144px);
+    width: calc(50% - 20px);
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255, 0.6);
+}
+.Manager-MassArticle_TableArticlePost .tox-tinymce {
+    min-height: 680px;
+}
+
+.Manager-MassArticle_Move {
+    display: none;
+}
+@media screen and (max-width: 480px) {
+    .Manager-MassArticle_TableArticleData .el-table__body-wrapper{
+        min-height: 550px;
+    }
+    .el-textarea .el-textarea__inner {
+        min-height: 280px;
+    }
+
+    .Manager-MassArticle {
+        display: block;
+    }
+    .Manager-MassArticle_PC {
+        display: none;
+    }
+    .Manager-MassArticle_Move {
+        display: block;
+    }
+
+    
+    .Manager-MassArticle_TableArticleData {
+        width: 100%;
+    }
+    .Manager-MassArticle_TableArticlePost {
+        width: 100%;
+    }
+}
+</style>
+
+
+
+
+
+
+
+
+<table style="border-collapse: collapse; width: 100.049%; height: 226.781px;" border="1"><caption>
+    <h2><span style="color: #169179;">机构设置</span></h2>
+    </caption>
+    <tbody>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">部门</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">人员</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">担任时间</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="height: 50.3958px; width: 33.2681%; text-align: center;" rowspan="2">技术部</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">朱引航</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">彭清玄</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="height: 50.3958px; width: 33.2681%; text-align: center;" rowspan="2">宣传部</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">黄家祥</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">王欣宇</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="height: 50.3958px; width: 33.2681%; text-align: center;" rowspan="2">组织部</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">王小庆</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">吴可</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">副社长</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">王文俊</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    <tr style="height: 25.1979px;">
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">社长</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">甘先懿</td>
+    <td style="width: 33.2681%; height: 25.1979px; text-align: center;">2023.9 &mdash;&mdash;</td>
+    </tr>
+    </tbody>
+    </table>
+    <p style="text-align: right;">2024-02-07</p>
+
+
+
+
+    <div style="padding: 0 16px;"></div>
+    <p>该功能基于讯飞星火的AI模型 为了方便大家使用 就默认用我的码 登陆之后就是你的了</p>
+    <p>( 如果你不在乎使用数据的话 )</p>
+    <p> 我知道比不上GPT 但那玩意儿太贵 先用这个凑活 </p>
