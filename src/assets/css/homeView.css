@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+}
+.home {
+    width: 100%;
+    min-height: 100vh;
+    /* background-color: blueviolet; */
+}
+.home .cover_bg {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(@/assets/img/banner/banner1.jpg) 40% no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.home .cover_bg .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.home .cover_bg .bac_tab {
+    position: absolute;
+    top: 20vh;
+    right: 6%;
+}
+.home .cover_bg .bar_down {
+  bottom: 40px;
+  width: 82px;
+  height: 82px;
+  margin-left: -40px;
+  background: url(@/assets/img/icon/i_down.png) 50% no-repeat;
+  animation: ani_down 2s linear infinite;
+  cursor: pointer;
+  position: absolute;
+}
+.home .cover_bg .bar_down::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(@/assets/img/icon/i_circle.png) 50% no-repeat;
+  animation: ani_circle 2s linear infinite;
+}
+@keyframes ani_circle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani_down {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.home .main_content {
+  background: url(@/assets/img/banner/bg_news.jpg) 50% no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+}
+.main_content .pc {
+  padding: 2% 8%;
+  width: calc(100% - 40px);
+} 
+.main_content .move {
+  display: none;
+}
+.home .main_content .left{
+  min-height: 550px;
+  /* background-color: aqua; */
+}
+.home .main_content .notice {
+  min-height: 550px;
+  /* background-color: rgb(101, 200, 43); */
+}
+.home .main_content .carouselBar {
+  padding: 0;
+  width: 100%;
+  height: 160px;
+  background: url(@/assets/img/banner/bg_nic.jpg) 50% no-repeat;
+}
+.home .el-dialog__body {
+  /* min-height: 20px; */
+}
+@media screen and (max-width: 1400px) {
+  .main_content .pc {
+    padding: 2% 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+
+  .main_content .pc, .home .main_content .carouselBar {
+    display: none;
+  }
+  .main_content .move {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home .cover_bg .bac_tab {
+    display: none
+  }
+  .home .loginFrame {
+    display: block;
+  }
+  .home .loginFrame {
+    width: 90%;
+  }
+  .el-message-box__wrapper .el-message-box {
+    width: 96%;
+  }
+}

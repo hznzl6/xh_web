@@ -1,0 +1,233 @@
+.bacTab .tabNav {
+    right: 120px;
+    top: 20vh;
+    list-style: none;
+}
+.bacTab .tabNav .navItem {
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+.bacTab .tabNav .navItem::before,
+.bacTab .tabNav .navItem::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 40px;
+  background-color: #ecac35;
+  border-radius: 20px;
+  transition: width 0.3s;
+  z-index: -1;
+}
+.bacTab .tabNav .navItem::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bacTab .tabNav .navItem::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+.bacTab .tabNav .navItem.active::before,
+.bacTab .tabNav .navItem.active::after {
+  width: 100%;
+}
+.bacTab .tabNav .navItem.active::before {
+  transition: width 0.3s 0.15s;
+}
+.bacTab .tabNav .navItem.active::after {
+  transition: width 0.3s;
+}
+
+.bacTab .tabList {
+  list-style: none;
+  min-height: 250px;
+  width: 100%;
+  /* background-color: aquamarine; */
+  padding: 0;
+}
+.bacTab .tabList .tab-li {
+  margin-top: 20px;
+  width: 300px;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.bacTab .tabList .tabItem {
+  float: left;
+  display: block;
+  align-items: left;
+  width: 120px;
+  height: 95px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+.bacTab .tabList .tabItem:hover {
+  transform: scale(1.1);
+}
+
+.bacTab .tabList .tab-li .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  bottom: -20px;
+  cursor: pointer;
+}
+.bacTab .tabList .tab-li .circle.active {
+  background-color: #ecac35;
+}
+
+.bacTab .tab_icon {
+  padding: 20px;
+  padding-bottom: 55px;
+  margin-left: -20px;
+  animation: none;
+  position: absolute;
+}
+.bacTab .tabList .tabItem:hover .tab_icon {
+  animation: ani_shake 0.6s linear;
+}
+
+.bacTab .tabList .tabItem .tab_title {
+  position: absolute;
+  color: #fff;
+  width: 100px;
+  top: 65px;
+}
+.c1 {
+  position: absolute;
+  right: 120px;
+}
+.c2 {
+  position: absolute;
+  right: 150px;
+}
+.c3 {
+  position: absolute;
+  right: 180px;
+}
+
+.sheyuan {
+  background: url(@/assets/img/icon/i1.png) 100% no-repeat;
+}
+.wenda {
+  background: url(@/assets/img/homeicon/人工智能.png) 100% no-repeat;
+  background-size: 95%;
+}
+.guanli {
+  background: url(@/assets/img/homeicon/管理.png) 100% no-repeat;
+  background-size: 90%;
+}
+.hotai {
+  background: url(@/assets/img/homeicon/后台管理.png) 100% no-repeat;
+  background-size: 90%;
+}
+.hulianwang {
+  background: url(@/assets/img/homeicon/互联网.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.huasheng {
+  background: url(@/assets/img/homeicon/花绳俱乐部.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.aiyue {
+  background: url(@/assets/img/homeicon/爱乐社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.mengxiang {
+  background: url(@/assets/img/homeicon/天使梦想.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.shuhua {
+  background: url(@/assets/img/homeicon/书画摄影.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.xinli {
+  background: url(@/assets/img/homeicon/心理社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.xicha {
+  background: url(@/assets/img/homeicon/习茶社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.wushu {
+  background: url(@/assets/img/homeicon/武术社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.taiqiu {
+  background: url(@/assets/img/homeicon/台球社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.yuyan {
+  background: url(@/assets/img/homeicon/语言社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.hanfu {
+  background: url(@/assets/img/homeicon/汉服社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.kochai {
+  background: url(@/assets/img/homeicon/口才社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.qishe {
+  background: url(@/assets/img/homeicon/围棋社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.sheying {
+  background: url(@/assets/img/homeicon/摄影社.png) 100% no-repeat;
+  background-size: 90%;
+} 
+.dushu {
+  background: url(@/assets/img/homeicon/读书社.png) 100% no-repeat;
+  background-size: 90%;
+}
+.wudao {
+  background: url(@/assets/img/homeicon/舞蹈社.png) 100% no-repeat;
+  background-size: 90%;
+}
+.dongman {
+  background: url(@/assets/img/homeicon/动漫社.png) 100% no-repeat;
+  background-size: 90%;
+}
+.yumaoqiu {
+  background: url(@/assets/img/homeicon/羽毛球社.png) 100% no-repeat;
+  background-size: 90%;
+}
+.pingpang {
+  background: url(@/assets/img/homeicon/乒乓球.png) 100% no-repeat;
+  background-size: 90%;
+}
+.wenxue {
+  background: url(@/assets/img/homeicon/文学社.png) 100% no-repeat;
+  background-size: 90%;
+}
+@keyframes ani_shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-7.5deg);
+  }
+  80% {
+    transform: rotate(7.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+

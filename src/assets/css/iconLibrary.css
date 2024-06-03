@@ -1,0 +1,202 @@
+/* 自定义图标 */
+.ali-ai,.commune,.shetuan,.internet,.skipping,.Music,.dream,.Painting,.psychology,.tea,.martial,.billiards,.language,.Hanfu,.eloquence,.chess,.photography,.read,.dance,.anime,.badminton{
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    left: 42%;
+}
+
+.backstage {
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    left: 48%;
+}
+.pingpong,.literature{
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    left: 45%;
+}
+
+.ali-ai{
+    background: url(@/assets/img/icon/test/123.png) 50% no-repeat;
+}
+.commune{
+    background: url(@/assets/img/icon/test/账户.png) 50% no-repeat;
+}
+.shetuan{
+    background: url(@/assets/img/icon/test/系统.png) 50% no-repeat;
+}
+.backstage{
+    background: url(@/assets/img/icon/test/运营管理.png) 50% no-repeat;
+}
+.internet{
+    background: url(@/assets/img/icon/test/互联网.png) 50% no-repeat;
+}
+.skipping{
+    background: url(@/assets/img/icon/test/跳绳社.png) 50% no-repeat;
+
+}
+.Music{
+    background: url(@/assets/img/icon/test/音乐社.png) 50% no-repeat;
+}
+.dream{
+    background: url(@/assets/img/icon/test/新梦想.png) 50% no-repeat;
+}
+.Painting{
+    background: url(@/assets/img/icon/test/书法社.png) 50% no-repeat;
+
+}
+.psychology{
+    background: url(@/assets/img/icon/test/心理社.png) 50% no-repeat;
+
+}
+.tea{
+    background: url(@/assets/img/icon/test/习茶社.png) 50% no-repeat;
+
+}
+.martial{
+    background: url(@/assets/img/icon/test/武术社.png) 50% no-repeat;
+
+}
+.billiards{
+    background: url(@/assets/img/icon/test/台球社.png) 50% no-repeat;
+
+}
+.language{
+    background: url(@/assets/img/icon/test/语言社.png) 50% no-repeat;
+
+}
+.Hanfu{
+    background: url(@/assets/img/icon/test/汉服社.png) 50% no-repeat;
+
+}
+.eloquence{
+    background: url(@/assets/img/icon/test/口才社.png) 50% no-repeat;
+
+}
+.chess{
+    background: url(@/assets/img/icon/test/围棋社.png) 50% no-repeat;
+
+}
+.photography{
+    background: url(@/assets/img/icon/test/摄影社.png) 50% no-repeat;
+
+}
+.read{
+    background: url(@/assets/img/icon/test/读书社.png) 50% no-repeat;
+
+}
+.dance{
+    background: url(@/assets/img/icon/test/舞蹈社.png) 50% no-repeat;
+
+}
+.anime{
+    background: url(@/assets/img/icon/test/动漫社.png) 50% no-repeat;
+
+}
+.badminton{
+    background: url(@/assets/img/icon/test/羽毛球社.png) 50% no-repeat;
+
+}
+.pingpong{
+    background: url(@/assets/img/icon/test/乒乓球.png) 50% no-repeat;
+
+}
+.literature{
+    background: url(@/assets/img/icon/test/文学社.png) 50% no-repeat;
+
+}
+.service:hover .i1{
+    animation: ani_shake 0.6s linear;
+}
+.service:hover .ali-ai{
+    animation: ani_shake 0.6s linear;
+}
+.service:hover .i3{
+    animation: ani_shake 0.6s linear;
+}
+.service:hover .i4{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .internet{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .skipping{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .Music{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .dream{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .Painting{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .psychology{
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .tea {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .martial {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .billiards {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .language {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .Hanfu {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .eloquence {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .chess {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .photography {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .read {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .dance {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .anime {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .badminton {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .pingpong {
+    animation: ani_shake 0.6s linear;
+}
+.club:hover .literature {
+    animation: ani_shake 0.6s linear;
+}
+@keyframes ani_shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-15deg);
+    }
+    40% {
+      transform: rotate(15deg);
+    }
+    60% {
+      transform: rotate(-7.5deg);
+    }
+    80% {
+      transform: rotate(7.5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }

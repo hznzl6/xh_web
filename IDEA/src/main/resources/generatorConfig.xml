@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库连接信息 -->
+    <context id="context1" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://124.221.138.245:3306/jsjds_mass"
+                        userId="root"
+                        password="ac0ea89d49c476a9">
+        </jdbcConnection>
+        <!-- 实体类、映射文件和Mapper接口的生成目标 -->
+        <javaModelGenerator targetPackage="com.example.mass"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.example.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.example.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 要生成代码的表 -->
+        <table tableName="user_account"></table>
+    </context>
+</generatorConfiguration>

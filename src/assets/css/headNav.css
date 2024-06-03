@@ -1,0 +1,113 @@
+.headNav {
+    width: 100%;
+    height: 100px;
+    z-index: 99;
+}
+.initial-bg {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(194, 194, 194, 0.1));
+}
+
+.headNav .slogan {
+    width: 100px;
+    height: 100px;
+    background: url(@/assets/img/icon/t_slogan.png) 50% no-repeat;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+.headNav .search {
+    width: 100px;
+    height: 100px;
+    background: url(@/assets/img/icon/t_search.png) 50% no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+.headNav .search::before {
+    content: "";
+    position: absolute;
+    right: 100px;
+    width: 1px;
+    height: 100px;
+    background-image: url(@/assets/img/icon/t_line.png);
+    display: inline-block;
+}
+
+.headNav .navBar {
+    padding: 0;
+    height: 100px;
+    width: 60%;
+    line-height: 100px;
+    position: relative;
+    position: absolute;
+    color: #fff;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.headNav .navBar li {
+    margin: 0 12px;
+    list-style: none;
+}
+
+.headNav .navItem {
+    line-height: 100px;
+    padding: 0 20px;
+    height: 100px;
+    color: #fff;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+.headNav .navItem::before,
+.headNav .navItem::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ecac35;
+    transition: width 0.3s;
+}
+.headNav .navItem::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.headNav .navItem::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+.headNav .navItem:hover::before,
+.headNav .navItem:hover::after {
+  width: 100%;
+}
+.headNav .navItem:hover::before {
+    transition: width 0.3s 0.15s;
+}
+.headNav .navItem:hover::after {
+    transition: width 0.3s;
+}
+.headNav .navItem:hover {
+    color: #ecac35;
+}
+
+@media screen and (max-width: 1280px) {
+    .headNav .navItem {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .headNav .navItem {
+        padding: 0 5px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .headNav .navItem {
+        display: none;
+    }
+    .headNav .search {
+        display: none;
+    }
+}

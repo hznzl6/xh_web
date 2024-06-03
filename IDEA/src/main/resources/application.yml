@@ -1,0 +1,33 @@
+server:
+  port: 40402
+  error:
+    include-message: always
+    include-stacktrace: always
+    include-binding-errors: always
+    http:
+      connections:
+        cleartext: true
+
+spring:
+  datasource:
+    url: jdbc:mysql://124.221.138.245:3306/jsjds_mass?serverTimezone=GMT%2B8
+    username: root
+    password: ac0ea89d49c476a9
+
+swagger:
+  production: false
+  basic:
+    enable: true
+    username: admin
+    password: 6862689
+
+xfxh:
+  hostUrl: https://spark-api.xf-yun.com/v2.1/chat
+  domain: generalv2
+  temperature: 0.5
+  maxTokens: 2048
+  maxResponseTime: 30
+  QPS: 2
+  appId: appId
+  apiKey: apiKey
+  apiSecret: apiSecret
