@@ -5,6 +5,7 @@
         <nav class="navBar" >
           <li @click="navToMenu(item)" class="navItem" v-for="item in navItem" :key="item.title">{{ item.title }}</li>
         </nav>
+        <i class="el-icon-s-fold"></i>
     </div>
 </template>
 <script>

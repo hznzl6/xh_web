@@ -32,7 +32,8 @@
             <el-submenu index="3">
                 <template slot="title">
                     <i class="el-icon-menu"></i>
-                    <span slot="title">功能</span>
+                    <!-- <span slot="title">功能</span> -->
+                    <span slot="title">社区</span>
                 </template>
                 <el-menu-item @click="changeMenu('/function/aiAsk')" index="3-1">AI问答</el-menu-item>
                 <!-- <el-menu-item @click="changeMenu('/function/onlineChat')" index="3-2">在线聊天</el-menu-item> -->

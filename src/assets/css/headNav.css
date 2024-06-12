@@ -92,6 +92,10 @@
     color: #ecac35;
 }
 
+
+.headNav .el-icon-s-fold {
+
+}
 @media screen and (max-width: 1280px) {
     .headNav .navItem {
         padding: 0 10px;
@@ -109,5 +113,11 @@
     }
     .headNav .search {
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headNav {
+        height: 70px;
     }
 }

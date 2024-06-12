@@ -5,14 +5,14 @@
           <span class="navItem" :class="{ active: showBtn === 'clubs' }" @mouseover="showLi('clubs')">社团一览</span>
         </div>
         <ul class="tabList">
-            <li class="tab-li" v-show="showBtn === 'guide'">
+            <li v-show="showBtn === 'guide'">
                 <a @click="navigateTo(item)" class="tabItem" v-for="item in tabPlane.server" :key="item.title" :style="{ backgroundColor: item.color }">
                     <i class="tab_icon pa" :class="getIcon(item)"></i>
                     <p class="tab_title">{{ item.title }}</p>
                 </a>
             </li>
             
-            <li class="tab-li" v-show="showBtn === 'clubs'">
+            <li v-show="showBtn === 'clubs'">
                 <a class="tabItem" v-for="item in paginatedItems" :key="item.title" :style="{ backgroundColor: item.color }">
                     <i class="tab_icon pa" :class="getIcon(item)"></i>
                     <p class="tab_title">{{ item.title }}</p>
